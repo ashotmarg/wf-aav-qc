@@ -294,6 +294,12 @@ process itr_coverage {
     label "wf_aav"
     memory "2 GB"
     cpus 3
+
+    publishDir (
+        params.out_dir,
+        mode: "copy"
+    )
+
     input:
         tuple val(meta),
               path("align.bam"),
